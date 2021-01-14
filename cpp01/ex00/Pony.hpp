@@ -9,7 +9,7 @@ class Pony
 {
 public:
     Pony();
-    ~Pony();
+    virtual ~Pony();
     void ponysLife();
 };
 
