@@ -20,7 +20,7 @@ Character & Character::operator=(Character const &c)
         if (am[i]) { delete am[i]; am[i] = nullptr; }
     name = c.getName();
     for (int i = 0; i < 4; i++)
-        am[i] = c.getAM(i);
+        am[i] = c.getAM(i)->clone();
     return *this;
 }
 
