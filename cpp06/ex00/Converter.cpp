@@ -40,6 +40,10 @@ void Converter::findType()
     }
     if (val[i] == '+' || val[i] == '-')
         i++;
+    if (val[i] == '.') {
+        dotNum++;
+        i++;
+    }
     if (val[i] >= '0' && val[i] <= '9')
         type = I;
     while (i < val.length())
