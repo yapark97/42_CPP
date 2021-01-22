@@ -1,6 +1,8 @@
 #include "A.hpp"
 
-A::A() : Base::Base() {}
+A::A() : Base::Base() {
+    std::cout<<"* A generated *"<<std::endl;
+}
 
 A::A(const A& a) : Base::Base() { (void)a; }
 

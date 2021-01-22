@@ -1,6 +1,22 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
+#include <random>
+
+Base *generate(void)
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> dis(0, 2);
+    int select = dis(gen);
+    if (select == 0)
+        return new A();
+    if (select == 1)
+        return new B();
+    if (select == 2)
+        return new C();
+    return 0;
+}
 
 void identify_from_pointer(Base *p)
 {
@@ -20,12 +36,11 @@ void identify_from_reference(Base &p)
 
 int main()
 {
-    Base *a = new A();
-    B b;
-    Base &ref = b;
-    Base *c = new C();
-    
-    identify_from_pointer(a);
+    A a;
+    Base &ref = a;
     identify_from_reference(ref);
-    identify_from_pointer(c);
+
+    Base *b1 = generate();
+    identify_from_pointer(b1);
+    delete b1;
 }

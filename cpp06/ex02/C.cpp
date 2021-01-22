@@ -1,6 +1,8 @@
 #include "C.hpp"
 
-C::C() : Base::Base() {}
+C::C() : Base::Base() {
+    std::cout<<"* C generated *"<<std::endl;
+}
 
 C::C(const C& a) : Base::Base() { (void)a; }
 
