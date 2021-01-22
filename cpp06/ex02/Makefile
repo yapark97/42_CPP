@@ -3,7 +3,7 @@ OBJ		= $(SRC:.cpp=.o)
 NAME	= identification
 RM		= rm -rf
 CC		= clang++
-FLAGS	= #-Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror
 all 	: $(NAME)
 clean	:
 		$(RM) $(OBJ)

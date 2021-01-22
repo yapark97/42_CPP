@@ -6,7 +6,7 @@ std::string const Converter::PseudoLiteralD[4] = {"inf", "-inf", "+inf", "nan"};
 Converter::Converter(std::string const val)
 {
     this->val = val;
-    type = I;
+    type = -1;
     for (int i = 0; i < 4; i++)
         status[i] = OK;
 }
@@ -40,6 +40,8 @@ void Converter::findType()
     }
     if (val[i] == '+' || val[i] == '-')
         i++;
+    if (val[i] >= '0' && val[i] <= '9')
+        type = I;
     while (i < val.length())
     {
         if (val[i] == '.')
