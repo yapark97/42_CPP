@@ -4,6 +4,7 @@
 # include <iostream>
 # include <algorithm>
 # include <vector>
+# include <list>
 
 class cannotFindException : public std::exception {
     virtual const char* what() const throw() {
