@@ -16,7 +16,7 @@ int main()
     Span sp2 = Span(10000);
     sp2.addNumber(0);
     try{
-        int k = sp2.shortestSpan();
+        std::cout<<sp2.shortestSpan()<<std::endl;
     } catch (std::exception const &e) {
         std::cerr<<e.what()<<std::endl;
     } //throw error
@@ -41,5 +41,11 @@ int main()
     std::cout<<"max : "<<max<<std::endl;
     std::cout << "shortest span : " << sp2.shortestSpan() << std::endl;
     std::cout << "longest span : "<< sp2.longestSpan() << std::endl;
+    std::cout<<"***"<<std::endl;
+    std::vector<int> v{50, 10, 100, 200, 30};
+    Span sp3(5);
+    sp3.addNumbers(v.begin(), v.end());
+    std::cout<<sp3.shortestSpan()<<std::endl;
+    std::cout<<sp3.longestSpan()<<std::endl;
     return 0;
 }

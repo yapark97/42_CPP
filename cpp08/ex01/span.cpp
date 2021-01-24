@@ -25,6 +25,14 @@ void Span::addNumber(int k)
     v.push_back(k);
 }
 
+void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+    if (v.size() + end - begin > n) throw Span::SpanIsFullException();
+    std::for_each(begin, end, [this](auto& k) {
+        this->addNumber(k);
+    });
+}
+
 int Span::shortestSpan()
 {
     if (v.size() <= 1)
@@ -33,7 +41,7 @@ int Span::shortestSpan()
     {
         sort(v.begin(), v.end());
         int min = v[1] - v[0];
-        for (int i = 1; i < v.size() - 1; i++)
+        for (unsigned int i = 1; i < v.size() - 1; i++)
             if (min > v[i + 1] - v[i])
                 min = v[i + 1] - v[i];
         return min;

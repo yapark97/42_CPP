@@ -20,6 +20,9 @@ public:
     std::vector<int> getV() const;
     unsigned int getN() const;
     void addNumber(int k);
+
+    void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+
     int shortestSpan();
     int longestSpan();
 
