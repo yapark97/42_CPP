@@ -29,7 +29,7 @@ int main()
     mstack2.push(10);
     mstack2.push(100.937);
     sort(mstack2.begin(), mstack2.end());
-    for (int i = 0; i < mstack2.size(); i++)
+    for (unsigned int i = 0; i < mstack2.size(); i++)
         std::cout<<mstack2[i]<<std::endl;
     return 0;
 }
